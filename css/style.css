@@ -254,3 +254,119 @@ a {
     grid-template-columns: repeat(3, 1fr);   /* 3列に並べる */
   }
 }
+
+/* =========================================
+   ファーストビューの背景スライドショー（CSSだけで動かす）
+   3枚を重ねて、順番に表示・非表示を切り替える
+   ========================================= */
+.hero {
+  position: relative;       /* スライドを背景として重ねる基準 */
+  overflow: hidden;
+}
+
+.hero > *:not(.hero-slides) {
+  position: relative;       /* 文字をスライドより前に出す */
+}
+
+.hero-slides span {
+  position: absolute;
+  inset: 0;                 /* 親いっぱいに広げる */
+  opacity: 0;
+  animation: hero-fade 18s infinite;   /* 1周18秒（1枚あたり6秒） */
+}
+
+/* 今は色付きの枠。写真にするときは background を url(...) に変える */
+.hero-slides span:nth-child(1) {
+  background: linear-gradient(160deg, var(--color-alt), var(--color-bg));
+}
+
+.hero-slides span:nth-child(2) {
+  background: linear-gradient(200deg, #e3e8df, var(--color-bg));
+  animation-delay: 6s;
+}
+
+.hero-slides span:nth-child(3) {
+  background: linear-gradient(120deg, #efe4d6, #f6f3ee);
+  animation-delay: 12s;
+}
+
+@keyframes hero-fade {
+  0%   { opacity: 0; transform: scale(1); }
+  8%   { opacity: 1; }
+  33%  { opacity: 1; }
+  41%  { opacity: 0; transform: scale(1.06); }   /* 消えながら少しズーム */
+  100% { opacity: 0; }
+}
+
+/* =========================================
+   スクロールで表示（フェードイン・左右からスライドイン）
+   .js が付いているとき（JavaScriptが動くとき）だけ最初に隠す
+   ========================================= */
+main {
+  overflow-x: clip;         /* 横から入ってくる要素で横スクロールが出ないようにする */
+}
+
+.js .fade-in,
+.js .slide-left,
+.js .slide-right {
+  opacity: 0;
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.js .fade-in     { transform: translateY(24px); }
+.js .slide-left  { transform: translateX(-40px); }
+.js .slide-right { transform: translateX(40px); }
+
+.js .is-visible {
+  opacity: 1;
+  transform: none;
+}
+
+/* =========================================
+   画面に固定する予約ボタン
+   スマホでは親指が届きやすい右下に置く
+   ========================================= */
+.fixed-reserve {
+  position: fixed;
+  right: 16px;
+  bottom: 16px;
+  z-index: 10;
+  padding: 12px 24px;
+  background: var(--color-main);
+  color: #fff;
+  text-decoration: none;
+  border-radius: 999px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  transition: background 0.2s;
+}
+
+.fixed-reserve:hover {
+  background: var(--color-main-dark);
+}
+
+/* ボタンがフッターの注意書きに重ならないよう、下に余白をとる */
+.site-footer {
+  padding-bottom: 88px;
+}
+
+/* =========================================
+   動きを減らす設定の人には、アニメーションを止める
+   （OSの「視差効果を減らす」などの設定に合わせる）
+   ========================================= */
+@media (prefers-reduced-motion: reduce) {
+  .hero-slides span {
+    animation: none;
+  }
+
+  .hero-slides span:nth-child(1) {
+    opacity: 1;
+  }
+
+  .js .fade-in,
+  .js .slide-left,
+  .js .slide-right {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}
