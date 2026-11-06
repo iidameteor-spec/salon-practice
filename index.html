@@ -16,14 +16,21 @@
 <body>
   <!-- body：画面に表示される中身 -->
 
+  <!-- ===== 共通ヘッダー（全ページ同じ。aria-current だけページごとに変える） ===== -->
   <header class="site-header">
-    <a href="index.html" class="logo">hair atelier hinata</a>
-    <nav class="nav">
-      <a href="index.html">トップ</a>
-      <a href="menu.html">メニュー</a>
-      <a href="staff.html">スタッフ</a>
-      <a href="access.html">アクセス</a>
-    </nav>
+    <div class="header-inner">
+      <a href="index.html" class="logo">hair atelier hinata</a>
+      <!-- スマホだけ表示するメニューボタン（三本線＝ハンバーガー） -->
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="メニューを開く">
+        <span></span>
+      </button>
+      <nav class="nav" id="site-nav">
+        <a href="index.html" aria-current="page">トップ</a>
+        <a href="menu.html">メニュー・料金</a>
+        <a href="staff.html">スタッフ</a>
+        <a href="access.html">アクセス・予約</a>
+      </nav>
+    </div>
   </header>
 
   <main>
@@ -96,8 +103,16 @@
     </section>
   </main>
 
+  <!-- ===== 共通フッター（全ページ同じ） ===== -->
   <footer class="site-footer">
-    <p>hair atelier hinata</p>
+    <p class="footer-logo">hair atelier hinata</p>
+    <nav class="footer-nav">
+      <a href="index.html">トップ</a>
+      <a href="menu.html">メニュー・料金</a>
+      <a href="staff.html">スタッフ</a>
+      <a href="access.html">アクセス・予約</a>
+    </nav>
+    <p>営業時間 10:00〜19:00／定休日 毎週火曜日</p>
     <p class="notice">※このサイトはWeb制作練習用の架空店舗です。実在の店舗・人物とは関係ありません。</p>
   </footer>
 
