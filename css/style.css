@@ -652,3 +652,98 @@ main {
     gap: 32px;
   }
 }
+
+/* =========================================
+   アクセス・予約ページ
+   ========================================= */
+.reserve-options {
+  display: grid;
+  gap: 24px;
+}
+
+.reserve-card {
+  padding: 24px;
+  border: 1px solid var(--color-alt);
+  border-radius: 12px;
+  text-align: center;
+}
+
+.reserve-card h3 {
+  margin: 0 0 8px;
+  font-size: 1.1rem;
+}
+
+.reserve-card p {
+  margin: 0;
+  color: var(--color-sub);
+  font-size: 0.95rem;
+}
+
+.reserve-card .btn {
+  margin-top: 16px;
+}
+
+/* 枠線だけのボタン（2番目の選択肢用） */
+.btn-outline {
+  background: transparent;
+  color: var(--color-main-dark);
+  border: 1px solid var(--color-main);
+}
+
+.btn-outline:hover {
+  background: var(--color-main);
+  color: #fff;
+}
+
+.reserve-card .tel {
+  margin-top: 16px;
+  font-size: 1.2rem;
+  color: var(--color-text);
+}
+
+/* 店舗情報 */
+.shop-info {
+  display: grid;
+  gap: 24px;
+}
+
+.map-placeholder {
+  display: grid;
+  place-items: center;      /* 中央に文字を置く */
+  aspect-ratio: 4 / 3;
+  border-radius: 12px;
+  background: #e3e8df;
+  color: var(--color-sub);
+  letter-spacing: 0.2em;
+}
+
+.info-table {
+  margin: 0;
+}
+
+.info-row {
+  display: grid;
+  grid-template-columns: 6em 1fr;   /* 左：項目名、右：内容 */
+  gap: 16px;
+  padding: 14px 0;
+  border-bottom: 1px solid #e2d9cc;
+}
+
+.info-row dt {
+  color: var(--color-main-dark);
+}
+
+.info-row dd {
+  margin: 0;
+}
+
+@media (min-width: 768px) {
+  .reserve-options {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .shop-info {
+    grid-template-columns: 1fr 1fr;
+    align-items: start;
+  }
+}

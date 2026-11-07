@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- 練習用の架空店舗なので、検索結果に出さない -->
+  <meta name="robots" content="noindex">
+  <title>アクセス・予約｜hair atelier hinata（練習用）</title>
+  <meta name="description" content="hair atelier hinata（練習用の架空店舗）のアクセス、営業時間、ご予約方法のご案内です。">
+  <link rel="stylesheet" href="css/style.css">
+  <script>document.documentElement.classList.add('js');</script>
+  <script src="js/main.js" defer></script>
+</head>
+<body>
+
+  <!-- ===== 共通ヘッダー（全ページ同じ。aria-current だけページごとに変える） ===== -->
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="index.html" class="logo">hair atelier hinata</a>
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="メニューを開く">
+        <span></span>
+      </button>
+      <nav class="nav" id="site-nav">
+        <a href="index.html">トップ</a>
+        <a href="menu.html">メニュー・料金</a>
+        <a href="staff.html">スタッフ</a>
+        <a href="access.html" aria-current="page">アクセス・予約</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="page-title">
+      <p class="page-title-en">Access &amp; Reservation</p>
+      <h1>アクセス・予約</h1>
+    </section>
+
+    <!-- 予約方法（このページの一番の目的なので先に置く） -->
+    <section class="section">
+      <h2>ご予約方法</h2>
+      <div class="reserve-options">
+        <div class="reserve-card fade-in">
+          <h3>Web予約（24時間受付）</h3>
+          <p>空き状況を見ながら、いつでもご予約いただけます。</p>
+          <!-- 実際の店舗では、予約サービスのURLに差し替える -->
+          <a href="#" class="btn">Webで予約する</a>
+        </div>
+        <div class="reserve-card fade-in">
+          <h3>LINEで予約・相談</h3>
+          <p>髪のお悩みのご相談だけでもお気軽にどうぞ。</p>
+          <a href="#" class="btn btn-outline">LINEで相談する</a>
+        </div>
+        <div class="reserve-card fade-in">
+          <h3>お電話</h3>
+          <p>施術中は電話に出られないことがあります。</p>
+          <!-- 架空の番号なので、電話をかけるリンクにはしない -->
+          <p class="tel">0776-00-0000（架空）</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 店舗情報 -->
+    <section class="section section-alt">
+      <h2>店舗情報</h2>
+      <div class="shop-info fade-in">
+        <!-- 地図の代わりの枠（実際の店舗ではGoogleマップを埋め込む） -->
+        <div class="map-placeholder" aria-hidden="true">MAP</div>
+        <dl class="info-table">
+          <div class="info-row">
+            <dt>店名</dt>
+            <dd>hair atelier hinata</dd>
+          </div>
+          <div class="info-row">
+            <dt>住所</dt>
+            <dd>福井県福井市〇〇町1-2-3（架空）</dd>
+          </div>
+          <div class="info-row">
+            <dt>アクセス</dt>
+            <dd>福井駅から車で10分／店舗前に駐車場3台</dd>
+          </div>
+          <div class="info-row">
+            <dt>営業時間</dt>
+            <dd>9:30〜18:30（最終受付 17:00）</dd>
+          </div>
+          <div class="info-row">
+            <dt>定休日</dt>
+            <dd>毎週月曜日・第3日曜日</dd>
+          </div>
+          <div class="info-row">
+            <dt>支払い方法</dt>
+            <dd>現金、クレジットカード、電子マネー</dd>
+          </div>
+        </dl>
+      </div>
+    </section>
+  </main>
+
+  <!-- ===== 共通フッター（全ページ同じ） ===== -->
+  <footer class="site-footer">
+    <p class="footer-logo">hair atelier hinata</p>
+    <nav class="footer-nav">
+      <a href="index.html">トップ</a>
+      <a href="menu.html">メニュー・料金</a>
+      <a href="staff.html">スタッフ</a>
+      <a href="access.html">アクセス・予約</a>
+    </nav>
+    <p>営業時間 9:30〜18:30／定休日 毎週月曜日・第3日曜日</p>
+    <p class="notice">※このサイトはWeb制作練習用の架空店舗です。実在の店舗・人物とは関係ありません。</p>
+  </footer>
+</body>
+</html>
