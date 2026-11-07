@@ -591,3 +591,64 @@ main {
     font-size: 2rem;
   }
 }
+
+/* =========================================
+   スタッフページ
+   ========================================= */
+.staff-list {
+  display: grid;
+  gap: 32px;
+}
+
+.staff-card {
+  display: grid;
+  gap: 16px;
+}
+
+/* 写真の代わりの枠（写真にするときは background を url(...) に変える） */
+.staff-photo {
+  aspect-ratio: 4 / 3;      /* 横4：縦3の比率を保つ */
+  border-radius: 12px;
+  background: linear-gradient(160deg, #e3e8df, var(--color-alt));
+}
+
+.staff-role {
+  margin: 0;
+  font-size: 0.85rem;
+  color: var(--color-main-dark);
+}
+
+.staff-body h3 {
+  margin: 0 0 8px;
+  font-size: 1.3rem;
+}
+
+.staff-name-en {
+  margin-left: 8px;
+  font-size: 0.8rem;
+  color: var(--color-sub);
+}
+
+.staff-meta {
+  margin: 16px 0 0;
+  padding: 16px;
+  background: var(--color-alt);
+  border-radius: 8px;
+  font-size: 0.9rem;
+}
+
+.staff-meta dt {
+  color: var(--color-main-dark);
+}
+
+.staff-meta dd {
+  margin: 0;
+}
+
+@media (min-width: 768px) {
+  .staff-card {
+    grid-template-columns: 2fr 3fr;   /* PCでは写真と文章を横に並べる */
+    align-items: center;
+    gap: 32px;
+  }
+}

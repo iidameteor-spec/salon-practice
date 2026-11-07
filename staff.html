@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- 練習用の架空店舗なので、検索結果に出さない -->
+  <meta name="robots" content="noindex">
+  <title>スタッフ｜hair atelier hinata（練習用）</title>
+  <meta name="description" content="hair atelier hinata（練習用の架空店舗）のスタッフ紹介。髪質改善を担当するスタイリストをご紹介します。">
+  <link rel="stylesheet" href="css/style.css">
+  <script>document.documentElement.classList.add('js');</script>
+  <script src="js/main.js" defer></script>
+</head>
+<body>
+
+  <!-- ===== 共通ヘッダー（全ページ同じ。aria-current だけページごとに変える） ===== -->
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="index.html" class="logo">hair atelier hinata</a>
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="メニューを開く">
+        <span></span>
+      </button>
+      <nav class="nav" id="site-nav">
+        <a href="index.html">トップ</a>
+        <a href="menu.html">メニュー・料金</a>
+        <a href="staff.html" aria-current="page">スタッフ</a>
+        <a href="access.html">アクセス・予約</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="page-title">
+      <p class="page-title-en">Staff</p>
+      <h1>スタッフ</h1>
+    </section>
+
+    <section class="section">
+      <h2>担当するスタイリスト</h2>
+      <div class="staff-list">
+        <!-- スタッフ1人分のカード（写真は今は色付きの枠） -->
+        <article class="staff-card fade-in">
+          <div class="staff-photo" aria-hidden="true"></div>
+          <div class="staff-body">
+            <p class="staff-role">オーナー・スタイリスト</p>
+            <h3>日向 さき <span class="staff-name-en">Saki Hinata</span></h3>
+            <p>美容師歴15年。自分自身がくせ毛に悩んできた経験から、髪質改善を専門にしています。「毎朝のスタイリングが楽になった」と言っていただけるのが一番の喜びです。</p>
+            <dl class="staff-meta">
+              <dt>得意なこと</dt>
+              <dd>くせ毛の扱いやすいカット、髪質改善トリートメント</dd>
+            </dl>
+          </div>
+        </article>
+
+        <article class="staff-card fade-in">
+          <div class="staff-photo" aria-hidden="true"></div>
+          <div class="staff-body">
+            <p class="staff-role">スタイリスト</p>
+            <h3>森 ゆい <span class="staff-name-en">Yui Mori</span></h3>
+            <p>美容師歴8年。ダメージを抑えたカラーが得意です。色味のご相談から、ご自宅でのケア方法まで丁寧にお伝えします。</p>
+            <dl class="staff-meta">
+              <dt>得意なこと</dt>
+              <dd>透明感のあるカラー、ダメージケア</dd>
+            </dl>
+          </div>
+        </article>
+      </div>
+      <p class="price-note center">※スタッフはすべて架空の人物です。</p>
+    </section>
+
+    <section class="cta">
+      <h2>まずはご相談ください</h2>
+      <p>髪のお悩みを、お気軽にお聞かせください。</p>
+      <a href="access.html" class="btn">ご予約はこちら</a>
+    </section>
+  </main>
+
+  <!-- ===== 共通フッター（全ページ同じ） ===== -->
+  <footer class="site-footer">
+    <p class="footer-logo">hair atelier hinata</p>
+    <nav class="footer-nav">
+      <a href="index.html">トップ</a>
+      <a href="menu.html">メニュー・料金</a>
+      <a href="staff.html">スタッフ</a>
+      <a href="access.html">アクセス・予約</a>
+    </nav>
+    <p>営業時間 9:30〜18:30／定休日 毎週月曜日・第3日曜日</p>
+    <p class="notice">※このサイトはWeb制作練習用の架空店舗です。実在の店舗・人物とは関係ありません。</p>
+  </footer>
+
+  <a href="access.html" class="fixed-reserve">ご予約</a>
+</body>
+</html>
